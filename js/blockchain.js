@@ -74,7 +74,7 @@ function startAccountFinder(callback) {
             element = $(element);
             var username = element.data('screen-name');
             var id = element.data('user-id');
-            if ($(element).find('.user-actions.following').length > 0 || username in protectedUsers) {
+            if ($(element).find('.user-actions.following').length > 0 || username in protectedUsers || $(element).find('.dropdown.blocks-you').length == 0) {
                 scratch_usersSkipped++;
                 return null;
             }
